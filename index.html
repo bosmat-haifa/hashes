@@ -56,7 +56,7 @@
                 xhr2.open("POST", "api/getHashResponse");
                 xhr2.setRequestHeader("Content-Type", "application/json");
                 xhr2.onload = () => {
-                    console.log(xhr2.getResponseHeader("hash"));
+                    console.log(xhr2.responseText);
                     // window.location.hash = xhr2.response.hash;
                 };
                 xhr2.send({"hash": hash});
