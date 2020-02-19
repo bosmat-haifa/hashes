@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Testing.</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+        <script>
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "localhost:8080/api/sendHashRequest");
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.onload = () => {
+                var hash = window.location.hash;
+                var xhr2 = new XMLHttpRequest();
+                xhr2.open("POST", "localhost:8080/api/getHashResponse");
+                xhr2.setRequestHeader("Content-Type", "application/json");
+                xhr2.onload = () => {
+                    console.log(xhr2.getResponseHeader("hash"));
+                    // window.location.hash = xhr2.response.hash;
+                };
+                xhr2.send({"hash": hash});
+            };
+            xhr.send();
+            // hello there, if you found this, you might as well want to get one hash, translate it to correct english and send it to "bosmat.business@gmail.com" . good luck.
+        </script>
+    </body>
+</html>
