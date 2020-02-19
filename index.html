@@ -48,12 +48,12 @@
 
         <script>
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", "api/sendHashRequest");
+            xhr.open("GET", "https://750728993.tk/api/sendHashRequest");
             xhr.setRequestHeader("Content-Type", "application/json");
             xhr.onload = () => {
                 var hash = window.location.hash;
                 var xhr2 = new XMLHttpRequest();
-                xhr2.open("POST", "api/getHashResponse");
+                xhr2.open("POST", "https://750728993.tk/api/getHashResponse");
                 xhr2.setRequestHeader("Content-Type", "application/json");
                 xhr2.onload = () => {
                     console.log(xhr2.responseText);
